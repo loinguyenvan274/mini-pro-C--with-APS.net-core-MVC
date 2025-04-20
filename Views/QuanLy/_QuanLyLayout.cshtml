@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý - @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Web_1.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/QuanLy/layout.css" asp-append-version="true" />
+</head>
+
+<body>
+
+
+    <header>
+        <div class="logo">C#</div>
+        <nav>
+            <ul>
+
+                @* <li><a href="#">Hồ sơ</a></li> *@
+                <li><a href="@Url.Action("Logout", "QuanLy")">Đăng xuất</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="f1">
+        <div class="f2-l" id="f2-l">
+            <div class="f2-l-header"></div>
+            <ul class="f2-l-menu">
+                <li><a href="/QuanLy/ViewTaoKhoaHoc">Tạo khóa học</a></li>
+                <li><a href="/QuanLy/ViewDanhSachKH">Danh sách khóa học</a></li>
+                <li><a href="/QuanLy/ViewHocVien">Danh sách Học viên</a></li>
+                @* <li><a href="/QuanLy/ThucDon">Học viên khóa học</a></li> *@
+                <li><a href="/QuanLy/ThongKeThuNhap">Thống kê thu nhập</a></li>
+            </ul>
+        </div>
+        <div class="edge-hover"></div>
+        <div class="f2-r">
+            @RenderBody()
+        </div>
+    </div>
+
+
+    </div>
+
+</body>
+
+<script src="@Url.Content("~/js/QuanLy/HieuUng.js")"></script>
+
+</html>

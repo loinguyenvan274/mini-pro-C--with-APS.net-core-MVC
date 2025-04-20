@@ -1,0 +1,130 @@
+@{
+    ViewData["Title"] = "Tạo tài khoản";
+}
+
+@* <link rel="stylesheet" href="@Url.Content("~/css/style.css")"> *@
+
+
+<style>
+    body {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        background-color: #000000;
+        color: white;
+        font-family: Helvetica, sans-serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    .header_block {
+        padding: 5px 20px 5px;
+        display: flex;
+        flex-direction: column;
+        justify-content: flex-start;
+        text-align: left;
+        align-items: flex-start;
+    }
+
+    .parent_block {
+        color: black;
+        width: 70%;
+        max-width: 500px;
+        @* height: 100vh; *@
+        background-color: white;
+        margin: 0% auto;
+        margin-bottom: 90px;
+        margin-top: 100px;
+        padding: 20px;
+        border-radius: 10px;
+        /* Green */
+        float: center;
+    }
+    input{
+        background-color:white;
+        color: black;
+        border: 1px solid #000000;
+        border-radius: 5px;
+    }
+</style>
+
+<body>
+    <header class="header_block">
+        <div class="header_block">
+            <p>Bạn đã có tài khoảng? <a href="@Url.Action("Index", "Login")">Đăng nhập →</a></p>
+            <h5>Đăng ký tài khoản</h5>
+        </div>
+    </header>
+    <div style="border-bottom: 0.1px solid; "></div>
+    <div class="parent_block">
+        <div class="child_block">
+            <h5 style="text-align: left; padding-left: 20px;">
+                Đăng ký trở thành thành viên
+            </h5>
+            <form id="submit-form" method="post" >
+                <div style="margin-bottom: 15px;">
+                    <label for="name">Họ và tên:</label><br>
+                    <input type="text" id="name" name="name" required 
+                        style="width: 100%; padding: 10px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="email">Email:</label><br>
+                    <input type="email" id="email" name="email" required 
+                        style="width: 100%; padding: 10px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="phone">Số điện thoại:</label><br>
+                    <input type="text" id="phone" name="phone" required 
+                        style="width: 100%; padding: 10px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="ngaysinh">Ngày sinh:</label><br>
+                    <input type="date" id="ngaysinh" name="ngaySinh" required 
+                        style="width: 100%; padding: 10px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="username">Tên đăng nhập:</label><br>
+                    <input type="text" id="username" name="username" required 
+                        style="width: 100%; padding: 10px; box-sizing: border-box;">
+                </div>
+                <div style="margin-bottom: 15px;">
+                    <label for="password">Mật khẩu:</label><br>
+                    <input type="password" id="password" name="password" required 
+                        style="width: 100%; padding: 10px; box-sizing: border-box;">
+                </div>
+                <button type="submit" 
+                    style="background-color: black; border-radius: 10px; color: white; padding: 10px 20px; border: none; cursor: pointer;">Đăng
+                    ký</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+<script>
+    document.addEventListener("DOMContentLoaded", function () {
+        const form = document.getElementById("submit-form");
+        form.addEventListener("submit", function (e) {
+            e.preventDefault();
+            login("/Signup/CreateAccount", "/HocVien/Index", form);
+        });
+
+        async function login(url, homeUrl_1, form) {
+            try {
+                const response = await fetch(url, {
+                    method: "POST",
+                    body: new URLSearchParams(new FormData(form)),
+                });
+
+                if (response.ok) {
+                    window.location.href = homeUrl_1;
+                } else {
+                    const json = await response.json();
+                    alert(json.message);
+                }
+            } catch (error) {
+                console.error("Error during login:", error);
+                alert("Đã xảy ra lỗi khi gửi yêu cầu.");
+            }
+        }
+    });
+</script>

@@ -1,0 +1,35 @@
+@{
+    ViewData["Title"] = "Thống kê thu nhập";
+    Layout = "~/Views/QuanLy/_QuanLyLayout.cshtml";
+}
+
+<h2 class="text-center text-primary mb-4">Thống kê thu nhập theo khoảng thời gian</h2>
+
+<form asp-action="KetQua" method="post" class="row g-3 justify-content-center">
+    <div class="col-md-4">
+        <label class="form-label">Từ ngày</label>
+        <input type="date" name="tuNgay" class="form-control" required />
+    </div>
+    <div class="col-md-4">
+        <label class="form-label">Đến ngày</label>
+        <input type="date" name="denNgay" class="form-control" required />
+    </div>
+    <div class="col-12 text-center mt-3">
+        <button type="submit" class="btn btn-success">Thống kê</button>
+    </div>
+</form>
+
+<br>
+<br>
+<br>
+
+<h2 class="text-center">Kết quả thống kê thu nhập</h2>
+
+<p class="text-center">
+    Từ ngày <strong>@(ViewBag.TuNgay ?? "Không xác định")</strong>
+    đến ngày <strong>@(ViewBag.DenNgay ?? "Không xác định")</strong>
+</p>
+
+<h3 class="text-center text-success">
+    Tổng thu nhập: @String.Format("{0:#,##0} VNĐ", ViewBag.TongThuNhap ?? 0)
+</h3>

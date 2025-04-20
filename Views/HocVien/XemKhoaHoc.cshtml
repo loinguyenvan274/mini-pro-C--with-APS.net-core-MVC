@@ -1,0 +1,70 @@
+@model IEnumerable<Web_1.Models.KhoaHoc>
+
+@{
+    Layout = "~/Views/HocVien/HocVienLayout.cshtml";
+    ViewData["Title"] = "Danh sách khóa học";
+
+    // Lấy thông tin học viên từ ViewBag
+    var hocVien = ViewBag.HocVien as Web_1.Models.HocVien;
+    var khoaHocDaDangKy = hocVien?.KhoaHocs?.Select(kh => kh.MaKhoaHoc).ToList() ?? new List<int>();
+}
+
+<h2>Danh sách khóa học</h2>
+
+<div class="row">
+    @foreach (var khoaHoc in Model)
+    {
+        var daDangKy = khoaHocDaDangKy.Contains(khoaHoc.MaKhoaHoc);
+        <div class="col-md-4">
+            <div class="card mb-4 shadow-sm">
+                <div class="card-body">
+                    <h5 class="card-title">@khoaHoc._tenKhoaHoc</h5>
+                    <p class="card-text">
+                        <strong>Giảng viên:</strong> @khoaHoc._tenGiangVien<br />
+                        <strong>Khai giảng:</strong> @khoaHoc._thoiGianKhaiGiang.ToString("dd/MM/yyyy")<br />
+                        <strong>Học phí:</strong> @khoaHoc._hocPhi.ToString("C")<br />
+                        <strong>Số lượng tối đa:</strong> @khoaHoc._soLuongHocVienToiDa <br />
+                        <strong>Số Lượng HV đăng ký:</strong> @khoaHoc._soHocVienHienTai<br />
+                    </p>
+                    @if (daDangKy || khoaHoc._soHocVienHienTai >= khoaHoc._soLuongHocVienToiDa)
+                    {
+                        <button class="btn btn-secondary" disabled>Đã đăng ký</button>
+                    }
+                    else
+                    {
+                        <a href="@Url.Action("DangKy", "HocVien", new { idKhoaHoc = khoaHoc.MaKhoaHoc })" class="btn btn-primary">Đăng ký</a>
+                    }
+                </div>
+            </div>
+        </div>
+    }
+</div>
+
+<style>
+    .card {
+        border: 1px solid #ddd;
+        border-radius: 5px;
+        padding: 15px;
+        text-align: center;
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+        margin-bottom: 15px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-secondary {
+        background-color: #6c757d;
+        border-color: #6c757d;
+    }
+</style>

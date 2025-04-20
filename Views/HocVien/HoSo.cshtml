@@ -1,0 +1,120 @@
+@model Web_1.Models.HocVien
+
+@{
+    Layout = "~/Views/HocVien/HocVienLayout.cshtml";
+    ViewData["Title"] = "Hồ Sơ Học Viên";
+}
+
+<div class="container mt-5">
+    <h3 class="mb-4 fw-bold">Hồ sơ học viên</h3>
+
+    <form asp-action="SaveProfile" method="post" class="p-4 shadow-sm rounded border bg-white">
+        <!-- Họ và tên -->
+        <div class="mb-3">
+            <label for="_ten" class="form-label">Họ và Tên</label>
+            <input asp-for="_ten" class="form-control" id="_ten" placeholder="Nguyễn Văn A" />
+            <span asp-validation-for="_ten" class="text-danger"></span>
+        </div>
+
+        <!-- Ngày sinh -->
+        <div class="mb-3">
+            <label for="_ngaySinh" class="form-label">Ngày Sinh</label>
+            <input asp-for="_ngaySinh" type="date" class="form-control" id="_ngaySinh" />
+            <span asp-validation-for="_ngaySinh" class="text-danger"></span>
+        </div>
+
+        <!-- Email -->
+        <div class="mb-3">
+            <label for="_email" class="form-label">Email</label>
+            <input asp-for="_email" class="form-control" id="_email" placeholder="example@email.com" />
+            <span asp-validation-for="_email" class="text-danger"></span>
+        </div>
+
+        <!-- Số điện thoại -->
+        <div class="mb-3">
+            <label for="_sdt" class="form-label">Số Điện Thoại</label>
+            <input asp-for="_sdt" class="form-control" id="_sdt" placeholder="0123456789" />
+            <span asp-validation-for="_sdt" class="text-danger"></span>
+        </div>
+
+        <!-- Tài khoản -->
+        <div class="mb-3">
+            <label class="form-label">Tên Tài Khoản</label>
+            <input class="form-control" value="@Model._account?.TK" readonly />
+        </div>
+
+        <div class="text-end">
+            <button type="submit" class="btn btn-primary px-4">Lưu</button>
+            <a asp-action="Index" class="btn btn-secondary px-4">Hủy</a>
+        </div>
+    </form>
+
+    <div class="mt-4">
+        <h4 class="mb-3">Đổi mật khẩu</h4>
+        <form asp-action="ChangePassword" method="post" class="p-4 shadow-sm rounded border bg-white">
+            <!-- Mật khẩu cũ -->
+            <div class="mb-3 border rounded p-3 bg-light">
+                <label class="form-label mb-2 fw-semibold">Đổi mật khẩu</label>
+
+                <div class="mb-2">
+                    <input type="password" name="OldPassword" class="form-control" placeholder="Mật khẩu hiện tại" />
+                </div>
+                <div class="mb-2">
+                    <input type="password" name="NewPassword" class="form-control" placeholder="Mật khẩu mới" />
+                </div>
+                <div>
+                    <input type="password" name="ConfirmPassword" class="form-control"
+                        placeholder="Nhập lại mật khẩu mới" />
+                </div>
+            </div>
+            <div class="text-end">
+                <button type="submit" class="btn btn-primary px-4">Đổi Mật Khẩu</button>
+            </div>
+        </form>
+        <br>
+    </div>
+
+    <style>
+        body {
+            background-color: #f9f9f9;
+            font-family: 'Segoe UI', sans-serif;
+        }
+
+        .container {
+            max-width: 720px;
+        }
+
+        h3 {
+            color: #333;
+        }
+
+        .form-label {
+            font-weight: 500;
+        }
+
+        .btn-primary {
+            background-color: #5624d0;
+            border: none;
+        }
+
+        .btn-primary:hover {
+            background-color: #3d1ca3;
+        }
+
+        .btn-secondary {
+            background-color: #6c757d;
+        }
+
+        .btn-secondary:hover {
+            background-color: #5a6268;
+        }
+
+        .form-control,
+        .form-select {
+            border-radius: 0.5rem;
+        }
+
+        textarea.form-control {
+            resize: vertical;
+        }
+    </style>

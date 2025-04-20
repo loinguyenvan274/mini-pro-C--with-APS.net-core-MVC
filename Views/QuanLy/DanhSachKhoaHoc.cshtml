@@ -1,0 +1,80 @@
+@model IEnumerable<Web_1.Models.KhoaHoc>
+
+@{
+    Layout = "~/Views/QuanLy/_QuanLyLayout.cshtml";
+    ViewData["Title"] = "Danh Sách Khóa Học";
+}
+
+<style>
+    .card {
+        border-radius: 10px;
+        overflow: hidden;
+        transition: transform 0.2s, box-shadow 0.2s;
+    }
+
+    .card:hover {
+        transform: scale(1.05);
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    }
+
+    .card-title {
+        font-size: 1.25rem;
+        font-weight: bold;
+        color: #007bff;
+    }
+
+    .card-text {
+        font-size: 0.9rem;
+        color: #555;
+    }
+
+    .btn {
+        border-radius: 20px;
+    }
+
+    .btn-primary {
+        background-color: #007bff;
+        border-color: #007bff;
+    }
+
+    .btn-danger {
+        background-color: #dc3545;
+        border-color: #dc3545;
+    }
+
+    h1 {
+        font-size: 2rem;
+        font-weight: bold;
+        color: #333;
+        text-align: center;
+    }
+</style>
+
+<h1 class="mb-4">Danh Sách Khóa Học</h1>
+
+<div class="row">
+    @foreach (var khoaHoc in Model)
+    {
+        <div class="col-md-3 mb-4">
+            <div class="card h-100 shadow-sm">
+                <form action="" method="get">
+                    <div class="card-body">
+                        <h5 class="card-title">@khoaHoc._tenKhoaHoc</h5>
+                        <p class="card-text">
+                            @* <strong>Mã:</strong> @khoaHoc.MaKhoaHoc<br /> *@
+                            <strong>Giảng Viên:</strong> @khoaHoc._tenGiangVien<br />
+                            <strong>Khai Giảng:</strong> @khoaHoc._thoiGianKhaiGiang.ToString("dd/MM/yyyy")<br />
+                            <strong>Học Phí:</strong> @khoaHoc._hocPhi.ToString("C")<br />
+                             <strong>Số HV tối đa:</strong> @khoaHoc._soLuongHocVienToiDa<br />
+                            <strong>Số Lượng HV đăng ký:</strong> @khoaHoc._soHocVienHienTai<br />
+                        </p>
+                    </div>
+                    <div class="card-footer text-center">
+                        <a href="@Url.Action("EditKhoaHoc", "QuanLy", new { maKhoaHoc = @khoaHoc.MaKhoaHoc })" class="btn btn-primary btn-sm">Sửa</a>
+                        <a href="@Url.Action("XoaKhoaHoc", "QuanLy", new { maKhoaHoc = @khoaHoc.MaKhoaHoc })" class="btn btn-danger btn-sm">Xóa</a>
+                    </div>
+                </form>
+            </div>
+        </div>
+    }
+</div>

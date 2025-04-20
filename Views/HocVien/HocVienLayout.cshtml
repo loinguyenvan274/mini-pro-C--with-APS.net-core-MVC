@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Quản lý - @ViewData["Title"]</title>
+    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/Web_1.styles.css" asp-append-version="true" />
+    <link rel="stylesheet" href="~/css/HocVien/layout.css" asp-append-version="true" />
+</head>
+
+<body>
+
+
+    <header>
+        <div class="logo">C#</div> 
+        <nav>
+            <ul>
+
+                <li><a href="@Url.Action("XemHoSo","HocVien")">Hồ sơ</a></li>
+                <li><a href="@Url.Action("Logout", "HocVien")">Đăng xuất</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <div class="f1">
+        <div class="f2-l" id="f2-l">
+            <div class="f2-l-header"></div>
+            <ul class="f2-l-menu">
+                <li><a href="@Url.Action("XemKhoaHoc","HocVien")">Các khóa học</a></li>
+                <li><a href="@Url.Action("XemKhoaHocDaDangKy","HocVien")">Khóa học đăng ký</a></li>
+            </ul>
+        </div>
+        <div class="edge-hover"></div>
+        <div class="f2-r">
+            @RenderBody()
+            @RenderSection("Scripts", required: false)
+        </div>
+    </div>
+
+
+    </div>
+
+</body>
+
+<script src="@Url.Content("~/js/HocVien/HieuUng.js")"></script>
+
+</html>

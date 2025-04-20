@@ -1,0 +1,82 @@
+@{
+    ViewData["Title"] = "Đăng nhập";
+}
+
+@* <link rel="stylesheet" href="@Url.Content("~/css/style.css")"> *@
+
+<style>
+    body{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        background-color: var(--background-color);
+        margin: 0;
+    }
+
+    .fom-login {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        gap: 15px;
+        background-color: #f0f0f0;
+        padding: 20px;
+        border-radius: 5px;
+        text-align: center;
+        width: 60vw;
+        max-width: 500px;
+    }
+    .form {
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+    }
+    .pc-1 {
+       border-bottom: solid;
+       width: 60%;
+       margin: 0 auto;
+    }
+    #btnew {
+        background-color: #335ec2;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 5px;
+        cursor: pointer;
+        width: 40%;
+        margin: 0 auto;
+    }
+
+    input {
+        padding: 10px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        width: 100%;
+    }
+
+</style>
+
+<body>
+    <div class="fom-login">
+        <h2>Đăng nhập</h2>
+        <form class="form" action="@Url.Action("Login_1","Login")" method="post">
+            <div>
+                <label></label>
+                <input name="TaiKhoang" type="text" placeholder="Tên tài khoảng" />
+                <span class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label></label>
+                <input name="MatKhau" type="password" placeholder="Mật khẩu"/>
+                <span class="text-danger"></span>
+            </div>
+            <button type="submit" class="btn btn-primary">Đăng nhập</button>
+        </form>
+        <a href="">Quên mật khẩu?</a>
+        <div class="pc-1"></div>
+
+        <a href="@Url.Action("Index", "Signup")">                    
+        <button  id="btnew" class="btn btn-primary">Tạo tài khoảng mới</button>
+        </a>
+    </div>
+</body>

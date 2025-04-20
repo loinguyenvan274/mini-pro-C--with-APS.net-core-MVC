@@ -1,0 +1,95 @@
+is_global = true
+build_property.TargetFramework = net8.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = Web_1
+build_property.RootNamespace = Web_1
+build_property.ProjectDir = D:\APP\project_C_shap\Web_1\Web_1\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 8.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = D:\APP\project_C_shap\Web_1\Web_1
+build_property._RazorSourceGeneratorDebug = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/HocVien/HocVienLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9jVmllblxIb2NWaWVuTGF5b3V0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/HocVien/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9jVmllblxIb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/HocVien/HoSo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9jVmllblxIb1NvLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/HocVien/KhoaHocDK.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9jVmllblxLaG9hSG9jREsuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/HocVien/XemKhoaHoc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcSG9jVmllblxYZW1LaG9hSG9jLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/Login/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcTG9naW5cSW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/QuanLy/DanhSachHocVien.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XERhbmhTYWNoSG9jVmllbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/QuanLy/DanhSachKhoaHoc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XERhbmhTYWNoS2hvYUhvYy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/QuanLy/Home.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XEhvbWUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/QuanLy/SuaKhoaHoc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XFN1YUtob2FIb2MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/QuanLy/TaoKhoaHoc.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XFRhb0tob2FIb2MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/QuanLy/ThongKeThuNhap.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XFRob25nS2VUaHVOaGFwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/QuanLy/_QuanLyLayout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcUXVhbkx5XF9RdWFuTHlMYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/Shared/Error.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXEVycm9yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/Shared/_ValidationScriptsPartial.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9WYWxpZGF0aW9uU2NyaXB0c1BhcnRpYWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/Signup/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2lnbnVwXEluZGV4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[D:/APP/project_C_shap/Web_1/Web_1/Views/Shared/_Layout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = Vmlld3NcU2hhcmVkXF9MYXlvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = b-6wqoao545d

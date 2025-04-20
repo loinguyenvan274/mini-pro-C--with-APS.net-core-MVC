@@ -1,0 +1,251 @@
+header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+    background-color: #f8f9fa;
+    padding: 4px;
+    padding-left: 30px;
+    max-height: var(--header-height);
+    z-index: 1000;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+nav {
+    flex: 1;
+    margin-right: 10px;
+}
+
+nav ul {
+    flex: 1;
+    list-style-type: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: flex-end;
+}
+
+nav ul li {
+    margin-left: 20px;
+}
+
+nav ul li a {
+    text-decoration: none;
+    color: #444;
+    display: block;
+    padding: 3px 6px 3px;
+    font-size: 16px;
+    border: 1px solid #333;
+    border-radius: 5px;
+
+}
+
+.f1 {
+    flex: 1;
+    position: relative;
+    display: flex;
+    flex-direction: row;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    font-family: var(--font-family)
+}
+
+.f2-l {
+    position: fixed;
+    display: flex;
+    flex-direction: column;
+    top: 20px;
+    /* thêm để nó không bị ẩn */
+    left: calc(-14vw + 10px);
+    /* thêm để định vị */
+    width: 14vw;
+    /* hoặc dùng min-width */
+    height: 80vh;
+    /* hoặc dùng min-height */
+    border-radius: 0px 20px 20px 0px;
+    background-color: #f8f8f7;
+    margin-top: 30px;
+    transition: left 0.3s ease;
+    z-index: 2;
+}
+
+.f2-tao-khoa-hoc {
+    position: absolute;
+    top: 0;
+    left: 0px;
+    right: 0;
+    bottom: 0;
+    background-color: rgba(73, 71, 71, 0.5);
+    z-index: 0;
+
+    display: flex;
+    /* 🟢 thêm dòng này */
+    justify-content: center;
+    /* căn giữa ngang */
+    align-items: center;
+    /* căn giữa dọc */
+}
+
+.f2-tao-khoa-hoc-form {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    max-width: 80%;
+    height: 80%;
+    background-color: red;
+    border-radius: 20px;
+}
+
+.f2-r {
+    margin-top: var(--header-height);
+    padding-left: 17px;
+    position: relative;
+    background-color: rgb(195, 236, 239);
+    width: 100vw;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.edge-hover {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 20px;
+    height: 100%;
+    z-index: 3;
+}
+
+
+.f2-l ul {
+    flex: 1;
+    list-style-type: none;
+    margin: 20px 0px 0px 0px;
+    /* khoảng cách giữa các mục */
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    /* căn giữa */
+}
+
+.f2-l ul li {
+    margin: 4px;
+    /* khoảng cách giữa các mục */
+    width: 90%;
+    /* để li chiếm toàn bộ chiều ngang của ul */
+    height: 30px;
+    display: flex;
+    /* dùng flex để dễ căn giữa nội dung */
+    /* align-items: center; */
+    /* căn giữa theo chiều dọc */
+    /* justify-content: center; */
+    /* căn giữa chữ */
+}
+
+.f2-l-header {
+    font: 18px Arial, sans-serif;
+}
+
+.f2-l ul li a {
+    text-decoration: none;
+    color: #444;
+    display: flex;
+    /* dùng flex để dễ căn giữa nội dung */
+    align-items: center;
+    /* justify-content: center; */
+    /* căn giữa chữ */
+    padding: 4px;
+    /* tạo chiều cao */
+    font-size: var(--font-size);
+    /* dùng biến CSS để dễ thay đổi */
+    border: 1px solid #333;
+    border-radius: 5px;
+    width: 100%;
+    /* a chiếm toàn bộ chiều ngang của li */
+    /* đặt chiều cao cố định để đều nhau */
+    box-sizing: border-box;
+    /* giúp border không làm lệch kích thước */
+}
+
+:root {
+    --header-bg-color: #f8f9fa;
+    --text-color: #444;
+    --border-color: #333;
+    --border-radius: 5px;
+    --font-family: ui-sans-serif, -apple-system, BlinkMacSystemFont, "Segoe UI Variable Display", "Segoe UI", Helvetica, "Apple Color Emoji", Arial, sans-serif, "Segoe UI Emoji", "Segoe UI Symbol";
+    --font-size: 14px;
+    --link-padding: 3px 6px;
+    --sidebar-bg-color: red;
+    --content-bg-color: blue;
+    --sidebar-width: 20vw;
+    --sidebar-height: 80vh;
+    --transition-duration: 0.3s;
+    --header-height: 40px;
+}
+
+.styled-form {
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    font-family: var(--font-family);
+}
+
+.styled-form .form-group {
+    margin-bottom: 15px;
+}
+
+.styled-form .form-label {
+    font-size: 16px;
+    font-weight: bold;
+    color: var(--text-color);
+    margin-bottom: 5px;
+    display: block;
+}
+
+.styled-form .form-control {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid var(--border-color);
+    border-radius: var(--border-radius);
+    box-sizing: border-box;
+    transition: border-color 0.3s ease, box-shadow 0.3s ease;
+}
+
+.styled-form .form-control:focus {
+    border-color: #007bff;
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+    outline: none;
+}
+
+.styled-form .btn-primary {
+    background-color: #007bff;
+    color: #ffffff;
+    padding: 10px 20px;
+    font-size: 16px;
+    border: none;
+    border-radius: var(--border-radius);
+    cursor: pointer;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.styled-form .btn-primary:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.styled-form .btn-primary:active {
+    background-color: #004085;
+    transform: scale(1);
+}

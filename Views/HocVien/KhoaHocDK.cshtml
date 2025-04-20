@@ -1,0 +1,50 @@
+@model IEnumerable<Web_1.Models.KhoaHoc>
+
+@{
+    Layout = "~/Views/HocVien/HocVienLayout.cshtml";
+    ViewData["Title"] = "Danh sách khóa học đã đăng ký";
+}
+
+<h2 class="text-center mt-4">Danh sách khóa học đã đăng ký</h2>
+
+@if (!Model.Any())
+{
+    <div class="alert alert-warning text-center mt-4">
+        Bạn chưa đăng ký khóa học nào.
+    </div>
+}
+else
+{
+    <div class="container mt-4">
+        <div class="row">
+            @foreach (var khoaHoc in Model)
+            {
+                <div class="col-md-4 mb-4">
+                    <div class="card shadow-sm">
+                        <div class="card-body">
+                            <h5 class="card-title text-primary">@khoaHoc._tenKhoaHoc</h5>
+                            <p class="card-text">
+                                <strong>Giảng viên:</strong> @khoaHoc._tenGiangVien<br />
+                                <strong>Khai giảng:</strong> @khoaHoc._thoiGianKhaiGiang.ToString("dd/MM/yyyy")<br />
+                                <strong>Học phí:</strong> @khoaHoc._hocPhi.ToString("C")<br />
+                                <strong>Số lượng tối đa:</strong> @khoaHoc._soLuongHocVienToiDa <br />
+                                <strong>Số Lượng HV đăng ký:</strong> @khoaHoc._soHocVienHienTai<br />
+                            </p>
+                            @if (khoaHoc._thoiGianKhaiGiang > DateTime.Now)
+                            {
+                                <form asp-action="HuyDangKy" asp-controller="HocVien" method="get">
+                                    <input type="hidden" name="maKhoaHoc" value="@khoaHoc.MaKhoaHoc" />
+                                    <button type="submit" class="btn btn-danger btn-sm">Hủy đăng ký</button>
+                                </form>
+                            }
+                            else
+                            {
+                                <button class="btn btn-secondary btn-sm" disabled>Không thể hủy</button>
+                            }
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+}
